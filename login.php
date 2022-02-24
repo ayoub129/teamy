@@ -25,7 +25,7 @@
               $emailerr = "Invalid email format";
         }
         else {
-             $email = test_input($_POST["email"]);
+              $email = test_input($_POST["email"]);
               $password = test_input($_POST['pass']);
             //   select with just the email
               $sql = "SELECT * FROM `users` WHERE `email` = '$email'  ";
@@ -34,15 +34,25 @@
               if($count >= 1){  
                   while ($row = mysqli_fetch_assoc($result)) {
                       if(password_verify($password , $row["password"])){
-                          $_SESSION["id"] = $row['id'];
                           $admin = $row['admin'];
-                        //   check is admin or not 
-                          if($admin == "true") {
-                              header("Location : dashboard.php") ; 
-                          } else {
-                            //   header("Location:index.php") ; 
-                            echo "Good Good Ayoub";
+                          $status = $row['status'];
+                        
+                          if($admin == "true" &&  $status == "admin") {
+                            session_start();
+                            $_SESSION["id"] = $row['id'];
+                            header("Location: dashboard.php") ; 
+                          } 
+                          elseif( $status == "Not Approved" ) {
+                            session_start();
+                            $_SESSION["id"] = $row['id'];
+                            header("Location: NotApproved.php");
+                         } 
+                         else {
+                                session_start();
+                                $_SESSION["id"] = $row['id'];
+                                header("Location: dashboard.php");
                           }
+
                       } else {
                           $passerr = "Password Not Correct";
                       }
