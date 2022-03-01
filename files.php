@@ -35,7 +35,7 @@
                     <tbody>
                       <tr>
                         <td>
-                            <div class="avatars">
+                        <div class="avatars">
                                 <div class="avatar mt-0"><img src="assets/images/img.jpg" class="rounded-circle img-fluid" /></div>
                             </div>
                         </td>

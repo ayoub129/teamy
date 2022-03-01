@@ -2,6 +2,12 @@
   require_once("config/db.php");
   require_once("includes/sidebar.php");
 
+  $id = $_SESSION['id']; 
+  $checkUser = "SELECT * FROM `users` WHERE `id` = '$id'";
+  $checkUser_query = mysqli_query($conn , $checkUser);
+  $row = mysqli_fetch_array($checkUser_query);
+  $status = $row['status'];
+  
   $task = "SELECT * FROM `tasks`";
   $result1 = mysqli_query($conn , $task);
 
@@ -19,7 +25,7 @@
     <div class="container-fluid">
       <div class="d-flex align-items-center pt-3 justify-content-between">
         <div class="text-dark fw-bold text-uppercase">
-          Dashboard
+          Dashboard 
         </div>
         <div class="d-flex align-items-center">
           <div class="position-relative">

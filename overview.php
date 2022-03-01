@@ -1,6 +1,13 @@
 <?php 
- require_once("includes/header.php"); 
- require_once("includes/sidebar.php") 
+  require_once "config/db.php";
+  require_once("includes/sidebar.php") ;
+
+  
+   $id = $_SESSION["id"];
+   $profile = "SELECT * FROM `users` WHERE `id` = '$id'";
+   $result = mysqli_query($conn , $profile);
+   $row = mysqli_fetch_array($result);
+
 
 ?>
 <body class="bg-light">
@@ -95,7 +102,7 @@
 </div>
 </div>
 
-</div>
+</div>https://shockjump.store/
 </div>
 </section>
 

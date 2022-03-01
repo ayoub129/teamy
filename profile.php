@@ -1,7 +1,6 @@
 <?php 
- require_once("includes/header.php"); 
- require_once("includes/sidebar.php") 
 
+ require_once("includes/sidebar.php") 
 ?>
 <body class="bg-light">
 
@@ -9,7 +8,7 @@
     <div class="container-fluid">
       <div class="d-flex align-items-center pt-3 justify-content-between">
         <div class="text-dark fw-bold text-uppercase">
-          Dashboard
+          Profile
         </div>
         <div class="d-flex align-items-center">
           <div class="position-relative">

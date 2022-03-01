@@ -1,7 +1,7 @@
 /* font familly */
 @font-face {
     font-family: Montserat;
-    src: url(../fonts/Montserrat-VariableFont_wght.ttf);
+    src: url(../fonts/static/Montserrat-Regular.ttf);
 }
 
 :root {
